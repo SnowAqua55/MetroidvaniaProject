@@ -31,7 +31,14 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
         }
 
-        Player = FindObjectOfType<Player>();
+        if (Player == null)
+        {
+            Player = FindObjectOfType<Player>();
+            if (Player == null)
+            {
+                Debug.LogError("Player 컴포넌트를 가진 오브젝트를 찾을 수 없습니다.");
+            }
+        }
     }
 
 
