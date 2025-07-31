@@ -35,7 +35,7 @@ public enum EquipmentPart
 }
 
 [CreateAssetMenu(fileName = "New Item", menuName = "ScriptableObject/Create New Item")]
-public class ScriptableItems : ScriptableObject
+public class ItemData : ScriptableObject
 {
     public string itemName;
     public string itemDescription;
@@ -45,7 +45,7 @@ public class ScriptableItems : ScriptableObject
 }
 
 [CreateAssetMenu(fileName = "new Equipment", menuName = "ScriptableObject/Create New Equipment")]
-public class ScriptableEquipment : ScriptableItems
+public class EquipmentData : ItemData
 {
     public float value;
     public float attackSpeed;
