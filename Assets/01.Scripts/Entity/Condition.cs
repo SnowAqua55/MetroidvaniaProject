@@ -5,6 +5,7 @@ public interface IDamageable
 {
 	void TakeDamage(float value);
     void TakeHeal(float value);
+    void Die();
 }
 
 public class Condition : MonoBehaviour
@@ -12,6 +13,7 @@ public class Condition : MonoBehaviour
     public float curValue;
 	public float maxValue;
     public float passiveValue;
+    public float deathValue = 0.0f;
     public Image uiBar;
 
     void Start()
@@ -36,6 +38,6 @@ public class Condition : MonoBehaviour
 
     public void Subtract(float value)
     {
-        curValue = Mathf.Max(curValue - value, 0);
+        curValue = Mathf.Max(curValue - value, deathValue);
     }
 }
